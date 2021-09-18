@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Duoc Connect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-text-center, background ">
+      <ion-text class="ion-text-center">
+      <h1>Verifica tu identidad</h1>
+    </ion-text>
+    
+  
+
+  <ion-card  >
+    <ion-item class="ion-padding-horizontal">
+      <ion-label inputmode="email" position="floating"  >usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.nombreUsuario" placeholder="email@dominio.cl"></ion-input>
+    </ion-item>
+    <ion-item class="ion-padding-horizontal">
+      <ion-label position="floating">contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.password" placeholder="contraseña web" ></ion-input>
+    </ion-item> 
+    
+      <ion-button class="ion-align-self-center, btn_ingresar , " expand="block" style="--background: #F9B901; color:black" (click)="ingresar()"  fill="solid" shape="round">
+        <h6>Ingresar</h6> 
+      </ion-button>
+      <ion-item lines=none  >
+        <p class="center">¿Haz olvidado su contraseña?</p>
+        <p><a class="recuperar_clave" href="./../recuperar-clave">recuperar constraseña</a></p>
+      </ion-item>
+    
+  </ion-card>
+ 
+   
+
+ 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small" > <h4> Mesa central 800 600 600</h4></ion-title>
+  </ion-toolbar>
+</ion-footer>

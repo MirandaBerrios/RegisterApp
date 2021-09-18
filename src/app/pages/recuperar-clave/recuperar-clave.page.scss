@@ -1,0 +1,30 @@
+ion-content.background{
+    --background:rgb(0, 61, 106);    
+}
+.size{
+    height: 500px;
+}
+.mainCard{
+    margin-top: 200px;
+    background:rgb(0, 61, 106) ;
+    color: whitesmoke;
+    
+}
+
+.placeHolder{
+    color:black;
+}
+
+.showPass{
+    --background:rgb(0, 61, 106) ;
+    color: whitesmoke;
+    padding-bottom: 3em;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+}
+.btn_password{
+    padding-top: 1em;
+}

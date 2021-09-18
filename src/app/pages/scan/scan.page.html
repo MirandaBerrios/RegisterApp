@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title class="ion-text-center">
+      Registra tu asistencia
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <!-- Fallback for iOS PWA -->
+  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
+ 
+  <!-- Trigger the file input -->
+  <ion-button  class="buttonScann" expand="full" (click)="captureImage()">
+    <ion-icon slot="start" name="document-attach-outline"></ion-icon>
+    Escanear archivo
+  </ion-button>
+ 
+  <ion-button id="camScan" class="buttonScann" expand="full" (click)="startScan()">
+    <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+    Escanear con cámara
+  </ion-button>
+ 
+  <ion-button class="buttonScann" expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+    <ion-icon class="buttonScann" slot="start" name="refresh"></ion-icon>
+    regresar
+  </ion-button>
+ 
+  <!-- Shows our camera stream -->
+  <video id="videoQr" #video [hidden]="!scanActive" width="100%"></video>
+ 
+  <!-- Used to render the camera stream images -->
+  <canvas #canvas hidden></canvas>
+ 
+  <!-- Stop our scanner preview if active -->
+  <ion-button class="buttonScann" expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+    <ion-icon slot="start" name="close"></ion-icon>
+    Detener registro
+  </ion-button>
+ 
+  <ion-card id="ScanResult" *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title id="titulo">Resultado del scaner</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ scanResult }}
+    </ion-card-content>
+  </ion-card>
+ 
+</ion-content>
