@@ -39,13 +39,14 @@ export class ScanPage {
   }
  
   // Helper functions
-  async showQrToast() {
+  async showQrToast(duracion?: number) {
     const toast = await this.toastCtrl.create({
-      message: `Open ${this.scanResult}?`,
+      message: `Abrir ${this.scanResult}`,
+      duration: duracion? duracion: 2000,
       position: 'top',
       buttons: [
         {
-          text: 'Open',
+          text: 'Abrir',
           handler: () => {
             window.open(this.scanResult, '_system', 'location=yes');
           }

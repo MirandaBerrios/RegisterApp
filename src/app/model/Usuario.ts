@@ -33,7 +33,7 @@ export class Usuario {
     if (this.password.length > 4) {
       return 'La contraseña debe ser numérica de 4 dígitos.';
     }
-    if(this.password.indexOf(this.password) ===-1){
+    if(passwords.indexOf(this.password) ===-1){
       return 'la clave no es correcta'
     }
     return '';
